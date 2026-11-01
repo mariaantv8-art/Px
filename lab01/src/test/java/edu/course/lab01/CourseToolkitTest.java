@@ -19,6 +19,10 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
+        @Test
+    void returnsTrueForZero() {
+        assertTrue(CourseToolkit.isEven(0));
+    }
     @Test
     void returnsTrueForPositiveEvenNumber() {
         assertTrue(CourseToolkit.isEven(4));
