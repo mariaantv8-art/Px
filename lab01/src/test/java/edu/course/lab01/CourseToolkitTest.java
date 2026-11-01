@@ -141,4 +141,4 @@ class CourseToolkitTest {
                 () -> CourseToolkit.max(new int[]{})
         );
     }
-}
+} 

@@ -12,81 +12,79 @@ public final class CourseToolkit {
     /**
      * Возвращает true, если число четное.
      */
-    public static boolean isEven(int number) {
-        return number % 2 == 0;
-    }
-    public static boolean isPrime(int number) {
-        if (number < 2) {
-            return false;
-        }
-        if (number == 2) {
+    public static boolean isEven(int number){
+        if( number % 2 == 0){
             return true;
-        }
-        if (number % 2 == 0) {
+        }else{
             return false;
         }
-
-        for (int divisor = 3; (long) divisor * divisor <= number; divisor += 2) {
-            if (number % divisor == 0) {
+    }
+    public static boolean isPrime(int number){
+        if (number < 2){
+            return false;
+        }
+        if (number ==2){
+           return true; 
+        }
+        if (number % 2 == 0){
+            return false;
+        }
+        for (int divisor = 3; divisor * divisor <=number ; divisor +=2){
+            if (number % divisor == 0){
                 return false;
             }
         }
         return true;
     }
-
-    public static boolean isPalindrome(String text) {
-        if (text == null) {
-            throw new IllegalArgumentException("text must not be null");
+    public static boolean isPalindrome(String text){
+        if ( text == null){
+            throw new IllegalArgumentException("text is null");
         }
-
         int left = 0;
-        int right = text.length() - 1;
-
-        while (left < right) {
-            if (text.charAt(left) != text.charAt(right)) {
+        int right = text.length() -1;
+        while (left < right){
+            if (text.charAt(left)!= text.charAt(right)){
                 return false;
+            }else{
+                left++;
+                right--;
             }
-            left++;
-            right--;
         }
         return true;
     }
-
-    public static double average(int[] values) {
-        if (values == null || values.length == 0) {
-            throw new IllegalArgumentException("values must not be null or empty");
+    public static double average(int[] values){
+        if (values == null || values.length == 0){
+            throw new IllegalArgumentException("values is null or empty");
         }
-
         double sum = 0.0;
-        for (int value : values) {
+        for (int value : values){
             sum += value;
         }
         return sum / values.length;
     }
-    public static int min(int[] values) {
-        if (values == null || values.length == 0) {
-            throw new IllegalArgumentException("values must not be null or empty");
+    public static int min (int [] values){
+        if (values == null || values.length ==0){
+            throw new IllegalArgumentException("values is null or empty");
         }
-
-        int result = values[0];
-        for (int value : values) {
-            if (value < result) {
-                result = value;
+        int minValue = values[0];
+        for ( int i = 1; i < values.length; i++ ){
+            if (values[i] < minValue){
+                minValue = values[i];
             }
         }
-        return result;
+        return minValue;
     }
-    public static int max(int[] values) {
-        if (values == null || values.length == 0) {
-            throw new IllegalArgumentException("values must not be null or empty");
+    public static int max (int [] values){
+        if (values == null || values.length ==0){
+            throw new IllegalArgumentException("values is null or empty");
         }
-
-        int result = values[0];
-        for (int value : values) {
-            if (value > result) {
-                result = value;
+        int maxValues = values[0];
+        for (int i=1; i < values.length; i++){
+            if (values[i] > maxValues){
+                maxValues = values[i];
             }
         }
-        return result;
+        return maxValues;
+
     }
 }
