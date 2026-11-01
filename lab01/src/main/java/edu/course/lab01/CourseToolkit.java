@@ -85,6 +85,5 @@ public final class CourseToolkit {
             }
         }
         return maxValues;
-
     }
 }
